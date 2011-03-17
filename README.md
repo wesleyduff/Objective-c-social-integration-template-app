@@ -12,3 +12,43 @@ Platforms currently being added
 *	Android 2.1 +
 *	Windows Phone 7
 *	BlackBerry (to come in a much later date) 
+
+## Instruction on getting up and running in less than a minute.
+
+Download files
+
+	git@github.com:slysop/Objective-c-social-integration-template-app.git
+
+Open key.h and edit these lines
+
+	/**
+	 * FACEBOOK API KEYS AND SECRETS
+	*/
+	#define FacebookAppID @"<add your app id>"
+	#define FacebookAPIKey @"<add your api key>"
+	#define FacebookAppSecret @"<add your app secret>"
+	#define FacebookContactEmail @"<add your contact email>"
+	#define FacebookSupportEmail @"<add your support email>"
+
+	/**
+	 * GOWALLA API KEYS AND SECRETS
+	 */
+	#define GowallaAPIKey @"<add your api key>"
+	#define GowallaSecretKey @"<add your secret key>"
+	#define GowallaApplicationWebsite @"<add your application website>"
+	#define GowallaApplicationSupportWebsite @"<add your support website>"
+	#define GowallaOAuthCallbackURL @"<add your oathcallback url>"
+
+#### NOTE: Gowalla is under construction so you can just leave that section as is. Just update the Facebook api section with your data.
+
+Save and build. 
+
+After you sign into facebook and accept the permissions then you should be directed back to the application.
+
+Right now the application only has two buttons. The first one grabs the user info and displays it in the Log aka the NSLog(); function
+
+The section button is currently miss labled and when selected opens a dialog to post a message on your facebook page.
+
+Updates will be made almost every day so check back and pick it up when finished unless you want to play around with the code your self.
+
+# HAPPY CODING!
