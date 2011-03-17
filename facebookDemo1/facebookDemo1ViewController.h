@@ -23,14 +23,14 @@
 @interface facebookDemo1ViewController : UIViewController <FBRequestDelegate, FBDialogDelegate>{
     
     UIButton *getUserInfoButton;
-    UIButton *getFriendsCheckinButton;
+    UIButton *dialogPopUpExampleButton;
     facebookDemo1AppDelegate *appDelegate;
     Facebook *facebook;
 }
 - (IBAction)getUserInfo:(id)sender;
 - (IBAction)dialogPopUpExample:(id)sender;
 @property (nonatomic, retain) IBOutlet UIButton *getUserInfoButton;
-@property (nonatomic, retain) IBOutlet UIButton *getFriendsCheckinButton;
+@property (nonatomic, retain) IBOutlet UIButton *dialogPopUpExampleButton;
 @property (nonatomic, retain) facebookDemo1AppDelegate *appDelegate;
 @property (nonatomic, retain) Facebook *facebook;
 

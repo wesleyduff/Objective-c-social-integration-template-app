@@ -11,13 +11,13 @@
 
 @implementation facebookDemo1ViewController
 @synthesize getUserInfoButton;
-@synthesize getFriendsCheckinButton;
+@synthesize dialogPopUpExampleButton;
 @synthesize facebook;
 @synthesize appDelegate;
 - (void)dealloc
 {
     [getUserInfoButton release];
-    [getFriendsCheckinButton release];
+    [dialogPopUpExampleButton release];
     [appDelegate release];
     [facebook release];
     [super dealloc];
@@ -45,7 +45,7 @@
 - (void)viewDidUnload
 {
     [self setGetUserInfoButton:nil];
-    [self setGetFriendsCheckinButton:nil];
+    [self setDialogPopUpExampleButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

@@ -11,7 +11,7 @@
 
 @class facebookDemo1ViewController;
 
-@interface facebookDemo1AppDelegate : NSObject <UIApplicationDelegate> {
+@interface facebookDemo1AppDelegate : NSObject <UIApplicationDelegate, FBSessionDelegate> {
     Facebook *facebook;
     
 }
