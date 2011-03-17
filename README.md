@@ -49,8 +49,8 @@ You will need to update the FB URL with your appID
 *	URL types
 	*	item 0
 		*	URL Schemes
-			*	item 0	string fb<add your appId>
-#### NOTE: do not add the "<" or ">" that is just the place where you add your appId.
+			*	item 0	string fb\<add your appId\>
+NOTE: do not add the "<" or ">" that is just the place where you add your appId.
 
 Save and build. 
 
