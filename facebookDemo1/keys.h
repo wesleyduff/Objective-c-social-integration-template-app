@@ -10,17 +10,17 @@
 /**
  * FACEBOOK API KEYS AND SECRETS
 */
-#define FacebookAppID @"149013028496185"
-#define FacebookAPIKey @"cc962699775b1070a99e2d533b68ed59"
-#define FacebookAppSecret @"cea276f908007642518fee461457b3be"
-#define FacebookContactEmail @"slysop@gmail.com"
-#define FacebookSupportEmail @"slysop@gmail.com"
+#define FacebookAppID @"<add your app id>"
+#define FacebookAPIKey @"<add your api key>"
+#define FacebookAppSecret @"<add your app secret>"
+#define FacebookContactEmail @"<add your contact email>"
+#define FacebookSupportEmail @"<add your support email>"
 
 /**
  * GOWALLA API KEYS AND SECRETS
  */
-#define GowallaAPIKey @"de5c34980c0e468bb237341c9eab3fd1"
-#define GowallaSecretKey @"de73d3b5261944299b71e9c1641c3183"
-#define GowallaApplicationWebsite @"wesduff.com/p"
-#define GowallaApplicationSupportWebsite @"wesduff.com/mobile/demo/checkin/help/"
-#define GowallaOAuthCallbackURL @"wesduff.com/mobile/demo/checkin/gowalla/callback.html"
+#define GowallaAPIKey @"<add your api key>"
+#define GowallaSecretKey @"<add your secret key>"
+#define GowallaApplicationWebsite @"<add your application website>"
+#define GowallaApplicationSupportWebsite @"<add your support website>"
+#define GowallaOAuthCallbackURL @"<add your oathcallback url>"
