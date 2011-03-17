@@ -40,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55A3E356133270030001151E /* keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keys.h; sourceTree = "<group>"; };
 		55CAF19A1331BDD00063F192 /* facebookDemo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = facebookDemo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CAF19E1331BDD00063F192 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		55CAF1A01331BDD00063F192 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -132,6 +133,7 @@
 				55CAF1B41331BDD00063F192 /* facebookDemo1ViewController.m */,
 				55CAF1B61331BDD00063F192 /* facebookDemo1ViewController.xib */,
 				55CAF1A51331BDD00063F192 /* Supporting Files */,
+				55A3E356133270030001151E /* keys.h */,
 			);
 			path = facebookDemo1;
 			sourceTree = "<group>";

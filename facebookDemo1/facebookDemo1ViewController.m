@@ -7,6 +7,7 @@
 //
 
 #import "facebookDemo1ViewController.h"
+#import "keys.h"
 
 @implementation facebookDemo1ViewController
 @synthesize getUserInfoButton;
@@ -57,34 +58,39 @@
 }
 
 - (IBAction)getUserInfo:(id)sender {
-    NSLog(@"access Token : %@", appDelegate.facebook.accessToken);
     [appDelegate.facebook requestWithGraphPath:@"me" andDelegate:self];
 }
 
 - (IBAction)getFriendsCheckins:(id)sender {
-  NSLog(@"in getFrindsCheckins");
-   // [facebook dialog:@"feed" andDelegate:self];
     SBJSON *jsonWriter = [[SBJSON new] autorelease];
+    //location of image
+    
+    /**
+     Add this if you want to add an image to your dialog
+     
+     
     NSDictionary* media = [NSDictionary dictionaryWithObjectsAndKeys:
                            @"image", @"type",
-                           @"http://www.wesduff.com/facebook_apps/demo/graffitie.png", @"src",
-                           @"http://www.wesduff.com/p/", @"href",
+                           @"example.com/path/of/image", @"src",
+                           @"example.com", @"href",
                            nil];
+     
+    */
 
-    NSDictionary* actionLinks = [NSArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:@"Check out my portfolio!",@"text",@"http://wesduff.com/p/",@"href",nil], nil];
+    NSDictionary* actionLinks = [NSArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:@"Find it on Git Hub",@"text",@"https://github.com/slysop/Objective-c-social-integration-template-app",@"href",nil], nil];
     
     NSString *actionLinksStr = [jsonWriter stringWithObject:actionLinks];
     NSDictionary* attachment = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"Graffitie App coming out this Fall!", @"name",
-                                @"Graffitie Geo Tagging, by Wes Duff", @"caption",
-                                @"it is fun to code all night. (c)All rights reserved", @"description",
-                                [NSArray arrayWithObjects:media, nil ], @"media",
-                                @"http://wesduff.com", @"href", nil];
+                                NAMEFORDIALOG, @"name",
+                                DIALOGCAPTION, @"caption",
+                                DIALOGDESCRIPTION, @"description",
+                                //[NSArray arrayWithObjects:media, nil ], @"media", /* Uncomment this if you are using an image */
+                                @"https://github.com/slysop/Objective-c-social-integration-template-app", @"href", nil];
     NSString *attachmentStr = [jsonWriter stringWithObject:attachment];
     
     NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   @"149013028496185", @"api_key",
-                                   @"Tag your graffitie on Facebook", @"user_message_prompt",
+                                   FacebookAppID, @"api_key",
+                                   @"Your message to the user goes here", @"user_message_prompt",
                                    actionLinksStr, @"action_links",
                                    attachmentStr, @"attachment",
                                    nil];
@@ -115,7 +121,6 @@
 #pragma - facebook request delegate methods
 -(void)request:(FBRequest *)request didLoad:(id)result {
     NSDictionary *resultsDict = [[NSDictionary alloc ] initWithDictionary:(NSDictionary *)result];
-  //  NSLog(@"%@", [resultsDict objectForKey:@"3"]);
     NSLog(@"success");
 }
 -(void)request:(FBRequest *)request didFailWithError:(NSError *)error{
