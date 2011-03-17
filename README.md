@@ -41,6 +41,17 @@ Open key.h and edit these lines
 
 #### NOTE: Gowalla is under construction so you can just leave that section as is. Just update the Facebook api section with your data.
 
+IMPORTANT : open the "Supporting Files" folder and double click the facebookDemo1-info.plist.
+You will need to update the FB URL with your appID
+
+#### NOTE: I am using the new XCODE 4. This may be different if you are using an older version
+
+*	URL types
+	*	item 0
+		*	URL Schemes
+			*	item 0	string fb<add your appId>
+#### NOTE: do not add the "<" or ">" that is just the place where you add your appId.
+
 Save and build. 
 
 After you sign into facebook and accept the permissions then you should be directed back to the application.
