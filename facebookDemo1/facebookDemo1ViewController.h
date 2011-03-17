@@ -28,7 +28,7 @@
     Facebook *facebook;
 }
 - (IBAction)getUserInfo:(id)sender;
-- (IBAction)getFriendsCheckins:(id)sender;
+- (IBAction)dialogPopUpExample:(id)sender;
 @property (nonatomic, retain) IBOutlet UIButton *getUserInfoButton;
 @property (nonatomic, retain) IBOutlet UIButton *getFriendsCheckinButton;
 @property (nonatomic, retain) facebookDemo1AppDelegate *appDelegate;

@@ -61,7 +61,7 @@
     [appDelegate.facebook requestWithGraphPath:@"me" andDelegate:self];
 }
 
-- (IBAction)getFriendsCheckins:(id)sender {
+- (IBAction)dialogPopUpExample:(id)sender {
     SBJSON *jsonWriter = [[SBJSON new] autorelease];
     //location of image
     
