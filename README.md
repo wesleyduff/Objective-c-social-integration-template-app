@@ -8,6 +8,7 @@ As of 3-17-2011 facebook is the only working social network for this template ap
 As of 3-17-2011 The mobile plateform iOS is the only mobile platform supported
 
 Platforms currently being added
+
 *	Android 2.1 +
 *	Windows Phone 7
 *	BlackBerry (to come in a much later date) 
