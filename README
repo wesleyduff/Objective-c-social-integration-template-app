@@ -1,0 +1,6 @@
+<h1>This is a template for iPhone developers.</h1>
+<h3>Android, BlackBerry, Windows Mobile 7 soon to come</h3>
+<p>This template application can be used to get you up and running on facebook, twitter, and gowalla in less than a minute. All you have to do is change the variables for the api key, app key etc.. to match your credentials.
+Once you put in your credentials then you can build and test.</p>
+<p>There are two buttons on the home page after you sign in. The first button gets the users data and displays that data in the log using NSLog(); The second button pops up a dialog to post to facebook and displays the template actions links. </a>
+<p>Feel free to use this in anyway you like. Comments and help is always appreciated.</p>
