@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FBConnect.h"
 
 @class facebookDemo1ViewController;
 
 @interface facebookDemo1AppDelegate : NSObject <UIApplicationDelegate> {
-
+    Facebook *facebook;
+    
 }
-
+@property (nonatomic,retain) Facebook *facebook;
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
 @property (nonatomic, retain) IBOutlet facebookDemo1ViewController *viewController;

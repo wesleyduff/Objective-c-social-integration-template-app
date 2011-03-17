@@ -11,7 +11,7 @@
 #import "facebookDemo1ViewController.h"
 
 @implementation facebookDemo1AppDelegate
-
+@synthesize facebook;
 
 @synthesize window=_window;
 
@@ -20,9 +20,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    //facebook  of the facebook class
+    facebook = [[Facebook alloc] initWithAppId:@"149013028496185"];
+    //[facebook authorize:nil delegate:self];
+    NSArray *permissions = [[NSArray arrayWithObjects:@"email", @"read_stream", @"user_checkins", @"friends_checkins", @"publish_checkins", @"publish_stream", @"user_status", nil] retain];
+    [facebook authorize:permissions delegate:self];
+    
     return YES;
 }
 
@@ -70,6 +75,11 @@
     [_window release];
     [_viewController release];
     [super dealloc];
+}
+
+#pragma - Outbound Traffic
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [facebook handleOpenURL:url];
 }
 
 @end
