@@ -58,7 +58,7 @@ After you sign into facebook and accept the permissions then you should be direc
 
 Right now the application only has two buttons. The first one grabs the user info and displays it in the Log aka the NSLog(); function
 
-The section button is currently miss labled and when selected opens a dialog to post a message on your facebook page.
+The section button when selected opens a dialog to post a message on your facebook page.
 
 Updates will be made almost every day so check back and pick it up when finished unless you want to play around with the code your self.
 
