@@ -29,8 +29,8 @@
 			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string><your gowalla call back url goes here></string>
-				<string><your facebook app id goes here></string>
+				<string>callback-url://</string>
+				<string>fbappid</string>
 			</array>
 		</dict>
 	</array>
