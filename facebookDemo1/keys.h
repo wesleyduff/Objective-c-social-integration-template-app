@@ -33,7 +33,7 @@
 // naming collisions with other applications.
 //
 // Replace this in Info.plist with the callback for your application,
-#define kGowallaRedirectURI		@"wessocialdev"
+#define kGowallaRedirectURI		@"wessocialdev://"
 
 // Keys for storing OAuth tokens using NSUserDefaults
 #define kGowallaBasicOAuthAccessTokenPreferenceKey		@"gowalla_basic_oauth_access_token"

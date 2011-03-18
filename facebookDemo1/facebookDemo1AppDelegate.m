@@ -89,8 +89,8 @@
         NSLog(@"application:handleOpenURL: %@", url);
         URLParser * parser = [[[URLParser alloc] initWithURLString:[url absoluteString]] autorelease];
         NSString * code = [parser valueForVariable:@"code"];
-        
-        NSURL * OAuthTokenURL = [NSURL URLWithString:@"https://api.gowalla.com/api/oauth/token"];
+        NSLog(@"API KEY = %@", kGowallaAPIKey);
+        NSURL * OAuthTokenURL = [NSURL URLWithString:@"https://gowalla.com/api/oauth/token"];
         EGOHTTPFormRequest * request = [[[EGOHTTPFormRequest alloc] initWithURL:OAuthTokenURL delegate:self] autorelease];
         [request setPostValue:@"authorization_code" 
                        forKey:@"grant_type"];
@@ -102,8 +102,6 @@
                        forKey:@"code"];
         [request setPostValue:kGowallaRedirectURI
                        forKey:@"redirect_uri"];
-        [request setPostValue:@"read-write" 
-                       forKey:@"scope"];
         
         [request setDidFinishSelector:@selector(applicationDidAuthorizeWithRequest:)];
         [request startSynchronous];
