@@ -7,9 +7,10 @@
 //
 
 #import "facebookDemo1AppDelegate.h"
-
 #import "facebookDemo1ViewController.h"
-
+#import "URLParser.h"
+#import "EGOHTTPFormRequest.h"
+#import "keys.h"
 @implementation facebookDemo1AppDelegate
 @synthesize facebook;
 @synthesize navigationController;
@@ -79,8 +80,71 @@
 
 #pragma - Outbound Traffic
 -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    NSLog(@"testURL");
-    return [facebook handleOpenURL:url];
+    NSString *searchString = @"wessocialdev";
+    NSString *toSearchString = CFURLGetString((CFURLRef *)url);
+    NSRange prefixRange = [toSearchString rangeOfString:searchString];
+    if(prefixRange.length == 0){
+        [facebook handleOpenURL:url];
+    } else {
+        NSLog(@"application:handleOpenURL: %@", url);
+        URLParser * parser = [[[URLParser alloc] initWithURLString:[url absoluteString]] autorelease];
+        NSString * code = [parser valueForVariable:@"code"];
+        
+        NSURL * OAuthTokenURL = [NSURL URLWithString:@"https://api.gowalla.com/api/oauth/token"];
+        EGOHTTPFormRequest * request = [[[EGOHTTPFormRequest alloc] initWithURL:OAuthTokenURL delegate:self] autorelease];
+        [request setPostValue:@"authorization_code" 
+                       forKey:@"grant_type"];
+        [request setPostValue:kGowallaAPIKey
+                       forKey:@"client_id"];
+        [request setPostValue:kGowallaAPISecret
+                       forKey:@"client_secret"];
+        [request setPostValue:code 
+                       forKey:@"code"];
+        [request setPostValue:kGowallaRedirectURI
+                       forKey:@"redirect_uri"];
+        [request setPostValue:@"read-write" 
+                       forKey:@"scope"];
+        
+        [request setDidFinishSelector:@selector(applicationDidAuthorizeWithRequest:)];
+        [request startSynchronous];
+    }
+    return YES;
+}
+
+- (void)applicationDidAuthorizeWithRequest:(EGOHTTPFormRequest *)request {
+	NSLog(@"applicationDidAuthorizeWithRequest: %@", request.responseString);
+	NSDictionary * response = [NSDictionary dictionaryWithJSONData:[request responseData] error:nil];
+	
+	[[NSUserDefaults standardUserDefaults] setObject:[response valueForKey:@"access_token"] 
+											  forKey:kGowallaBasicOAuthAccessTokenPreferenceKey];
+	[[NSUserDefaults standardUserDefaults] setObject:[response valueForKey:@"refresh_token"] 
+											  forKey:kGowallaBasicOAuthRefreshTokenPreferenceKey];
+	
+	NSDate * expirationDate = [NSDate dateWithTimeIntervalSinceNow:[[response valueForKey:@"expires_in"] doubleValue]];
+	[[NSUserDefaults standardUserDefaults] setObject:expirationDate 
+											  forKey:kGowallaBasicOAuthTokenExpirationPreferenceKey];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	
+	// Refresh access token if it is expired
+	if ([expirationDate compare:[NSDate date]] == NSOrderedAscending) {
+		NSURL * OAuthTokenURL = [NSURL URLWithString:@"https://api.gowalla.com/api/oauth/token"];
+		EGOHTTPFormRequest * request = [[[EGOHTTPFormRequest alloc] initWithURL:OAuthTokenURL delegate:self] autorelease];
+		[request setPostValue:@"refresh_token" 
+					   forKey:@"grant_type"];
+		[request setPostValue:kGowallaAPIKey
+					   forKey:@"client_id"];
+		[request setPostValue:kGowallaAPISecret
+					   forKey:@"client_secret"];
+		[request setPostValue:[[NSUserDefaults standardUserDefaults] objectForKey:kGowallaBasicOAuthRefreshTokenPreferenceKey]
+					   forKey:@"refresh_token"];
+		[request setPostValue:kGowallaRedirectURI
+					   forKey:@"redirect_uri"];
+		
+		[request setDidFinishSelector:@selector(applicationDidAuthorizeWithRequest:)];
+		[request startSynchronous];
+	} else {
+		[authenticationViewController dismissModalViewControllerAnimated:YES];
+	}	
 }
 
 @end
