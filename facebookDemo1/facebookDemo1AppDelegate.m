@@ -80,7 +80,7 @@
 
 #pragma - Outbound Traffic
 -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    NSString *searchString = @"wessocialdev";
+    NSString *searchString = kGowallaRedirectURI;
     NSString *toSearchString = CFURLGetString((CFURLRef *)url);
     NSRange prefixRange = [toSearchString rangeOfString:searchString];
     if(prefixRange.length == 0){
