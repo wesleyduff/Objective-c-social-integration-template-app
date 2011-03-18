@@ -94,7 +94,7 @@
         EGOHTTPFormRequest * request = [[[EGOHTTPFormRequest alloc] initWithURL:OAuthTokenURL delegate:self] autorelease];
         [request setPostValue:@"authorization_code" 
                        forKey:@"grant_type"];
-        [request setPostValue:@"de5c34980c0e468bb237341c9eab3fd1"
+        [request setPostValue:kGowallaAPIKey
                        forKey:@"client_id"];
         [request setPostValue:kGowallaAPISecret
                        forKey:@"client_secret"];
