@@ -1,57 +1,42 @@
 //
-//  AuthenticationViewController.m
-//  facebookDemo1
+//  OAuthViewController.m
+//  Gowalla-Basic
 //
-//  Created by Wes Duff on 3/17/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Mattt Thompson on 10/06/30.
+//  Copyright 2010 Mattt Thompson. All rights reserved.
 //
 
 #import "AuthenticationViewController.h"
-
-
+#import "keys.h"
+#import "URLParser.h"
+#import "EGOHTTPFormRequest.h"
 @implementation AuthenticationViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+
+#pragma mark -
+#pragma mark View Lifecycle
+
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	
+	NSString * OAuthURLString = [kGowallaOAuthURL stringByAppendingFormat:@"?redirect_uri=%@&client_id=%@&scope=%@", kGowallaRedirectURI, kGowallaAPIKey, @"read-write"];
+	NSURL * OAuthURL = [NSURL URLWithString:@"https://gowalla.com/api/oauth/new?redirect_uri=wessocialdev://&client_id=de5c34980c0e468bb237341c9eab3fd1"];
+	NSURLRequest * OAuthURLRequest = [[[NSURLRequest alloc] initWithURL:OAuthURL] autorelease];
+	
+	[webView loadRequest:OAuthURLRequest];
 }
 
-- (void)dealloc
-{
-    [super dealloc];
+- (void)viewDidUnload {
+	[super viewDidUnload];
+	[webView stopLoading];
+	webView.delegate = nil;
+	webView = nil;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
+#pragma mark -
+#pragma mark UIWebViewDelegate
+
+- (void)webViewDidStartLoad:(UIWebView *)wv {
+	NSLog(@"webViewDidStartLoad: %@", [wv.request URL]);
 }
-
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 @end

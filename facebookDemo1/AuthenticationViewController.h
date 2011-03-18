@@ -1,16 +1,16 @@
 //
-//  AuthenticationViewController.h
-//  facebookDemo1
+//  OAuthViewController.h
+//  Gowalla-Basic
 //
-//  Created by Wes Duff on 3/17/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Mattt Thompson on 10/06/30.
+//  Copyright 2010 Mattt Thompson. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 
-@interface AuthenticationViewController : UIViewController {
-    
+@interface AuthenticationViewController : UIViewController <UIWebViewDelegate> {
+	IBOutlet UIWebView * webView;
 }
 
 @end

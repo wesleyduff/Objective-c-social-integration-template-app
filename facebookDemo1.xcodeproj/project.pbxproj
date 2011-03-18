@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5505388113330B8E009BF89E /* AuthenticationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5505387E13330B8E009BF89E /* AuthenticationView.xib */; };
+		5505388213330B8E009BF89E /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505388013330B8E009BF89E /* AuthenticationViewController.m */; };
+		550538841333153F009BF89E /* Libraries in Resources */ = {isa = PBXBuildFile; fileRef = 550538831333153F009BF89E /* Libraries */; };
+		5505388713331585009BF89E /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505388613331585009BF89E /* URLParser.m */; };
+		5505388C13331599009BF89E /* EGOHTTPFormRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505388913331599009BF89E /* EGOHTTPFormRequest.m */; };
+		5505388D13331599009BF89E /* EGOHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505388B13331599009BF89E /* EGOHTTPRequest.m */; };
 		55CAF19F1331BDD00063F192 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CAF19E1331BDD00063F192 /* UIKit.framework */; };
 		55CAF1A11331BDD00063F192 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CAF1A01331BDD00063F192 /* Foundation.framework */; };
 		55CAF1A31331BDD00063F192 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CAF1A21331BDD00063F192 /* CoreGraphics.framework */; };
@@ -40,6 +46,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5505387E13330B8E009BF89E /* AuthenticationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthenticationView.xib; sourceTree = "<group>"; };
+		5505387F13330B8E009BF89E /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
+		5505388013330B8E009BF89E /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
+		550538831333153F009BF89E /* Libraries */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Libraries; sourceTree = "<group>"; };
+		5505388513331585009BF89E /* URLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URLParser.h; path = Libraries/URLParser.h; sourceTree = "<group>"; };
+		5505388613331585009BF89E /* URLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = URLParser.m; path = Libraries/URLParser.m; sourceTree = "<group>"; };
+		5505388813331599009BF89E /* EGOHTTPFormRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EGOHTTPFormRequest.h; path = Libraries/EGOHTTPRequest/EGOHTTPFormRequest.h; sourceTree = "<group>"; };
+		5505388913331599009BF89E /* EGOHTTPFormRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EGOHTTPFormRequest.m; path = Libraries/EGOHTTPRequest/EGOHTTPFormRequest.m; sourceTree = "<group>"; };
+		5505388A13331599009BF89E /* EGOHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EGOHTTPRequest.h; path = Libraries/EGOHTTPRequest/EGOHTTPRequest.h; sourceTree = "<group>"; };
+		5505388B13331599009BF89E /* EGOHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EGOHTTPRequest.m; path = Libraries/EGOHTTPRequest/EGOHTTPRequest.m; sourceTree = "<group>"; };
 		55A3E356133270030001151E /* keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keys.h; sourceTree = "<group>"; };
 		55CAF19A1331BDD00063F192 /* facebookDemo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = facebookDemo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CAF19E1331BDD00063F192 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -126,6 +142,16 @@
 		55CAF1A41331BDD00063F192 /* facebookDemo1 */ = {
 			isa = PBXGroup;
 			children = (
+				550538831333153F009BF89E /* Libraries */,
+				5505387E13330B8E009BF89E /* AuthenticationView.xib */,
+				5505387F13330B8E009BF89E /* AuthenticationViewController.h */,
+				5505388013330B8E009BF89E /* AuthenticationViewController.m */,
+				5505388513331585009BF89E /* URLParser.h */,
+				5505388613331585009BF89E /* URLParser.m */,
+				5505388813331599009BF89E /* EGOHTTPFormRequest.h */,
+				5505388913331599009BF89E /* EGOHTTPFormRequest.m */,
+				5505388A13331599009BF89E /* EGOHTTPRequest.h */,
+				5505388B13331599009BF89E /* EGOHTTPRequest.m */,
 				55CAF1AD1331BDD00063F192 /* facebookDemo1AppDelegate.h */,
 				55CAF1AE1331BDD00063F192 /* facebookDemo1AppDelegate.m */,
 				55CAF1B01331BDD00063F192 /* MainWindow.xib */,
@@ -249,6 +275,8 @@
 				55CAF1B21331BDD00063F192 /* MainWindow.xib in Resources */,
 				55CAF1B81331BDD00063F192 /* facebookDemo1ViewController.xib in Resources */,
 				55CAF1DC1331C30E0063F192 /* FBDialog.bundle in Resources */,
+				5505388113330B8E009BF89E /* AuthenticationView.xib in Resources */,
+				550538841333153F009BF89E /* Libraries in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +300,10 @@
 				55CAF20D1331C39E0063F192 /* SBJsonBase.m in Sources */,
 				55CAF20E1331C39E0063F192 /* SBJsonParser.m in Sources */,
 				55CAF20F1331C39E0063F192 /* SBJsonWriter.m in Sources */,
+				5505388213330B8E009BF89E /* AuthenticationViewController.m in Sources */,
+				5505388713331585009BF89E /* URLParser.m in Sources */,
+				5505388C13331599009BF89E /* EGOHTTPFormRequest.m in Sources */,
+				5505388D13331599009BF89E /* EGOHTTPRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

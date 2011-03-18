@@ -8,16 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "FBConnect.h"
+#import "AuthenticationViewController.h"
 
 @class facebookDemo1ViewController;
-
 @interface facebookDemo1AppDelegate : NSObject <UIApplicationDelegate> {
     Facebook *facebook;
-    
+    UIWindow * window;
+    UINavigationController *navigationController;
+    AuthenticationViewController *authenticationViewController;
 }
 @property (nonatomic,retain) Facebook *facebook;
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-
-@property (nonatomic, retain) IBOutlet facebookDemo1ViewController *viewController;
+@property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
+@property (nonatomic, retain) AuthenticationViewController *authenticationViewController;
 
 @end
