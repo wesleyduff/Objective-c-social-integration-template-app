@@ -29,8 +29,8 @@
 			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wessocialdev</string>
-				<string>fb149013028496185</string>
+				<string><your gowalla call back url goes here></string>
+				<string><your facebook app id goes here></string>
 			</array>
 		</dict>
 	</array>
