@@ -3,7 +3,7 @@
 
 More to come at a later date
 
-As of 3-18-2011 After changing the file "keys.h" with the appropriate api keys, app keys, etc.. you will be able to leverage facebook and gowallas' api.
+As of 3-18-2011 After changing the file "keys.h" with the appropriate api keys, app keys, etc.. you will be able to leverage facebook and gowalla's api.
 NOTE: Twitter api integration should be completed and available for on 3-21-2011. Thanks
 
 As of 3-17-2011 The mobile plateform iOS is the only mobile platform supported
