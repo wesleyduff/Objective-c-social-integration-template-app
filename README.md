@@ -34,13 +34,26 @@ Open key.h and edit these lines
 	/**
 	 * GOWALLA API KEYS AND SECRETS
 	 */
-	#define GowallaAPIKey @"<add your api key>"
-	#define GowallaSecretKey @"<add your secret key>"
-	#define GowallaApplicationWebsite @"<add your application website>"
-	#define GowallaApplicationSupportWebsite @"<add your support website>"
-	#define GowallaOAuthCallbackURL @"<add your oathcallback url>"
+	#define kGowallaAPIBaseURL		@"https://api.gowalla.com/"
+	#define kGowallaOAuthURL		@"https://gowalla.com/api/oauth/new"
 
-#### NOTE: Gowalla is under construction so you can just leave that section as is. Just update the Facebook api section with your data.
+	// Credentials for authentication using OAuth
+	// Replace with your own credentials, available at http://api.gowalla.com/api/keys
+
+	#define kGowallaAPIKey			@"<add your app id>"
+	#define kGowallaAPISecret		@"<add your app secret>"
+
+	// In order to intercept and respond to the OAuth callback, we need to register
+	// a custom URL type for the application. This should be unique, to avoid any
+	// naming collisions with other applications.
+	//
+	// Replace this in Info.plist with the callback for your application,
+	#define kGowallaRedirectURI		@"<your callback url : should be something like whatever://> "
+
+	// Keys for storing OAuth tokens using NSUserDefaults
+	#define kGowallaBasicOAuthAccessTokenPreferenceKey		@"gowalla_basic_oauth_access_token"
+	#define kGowallaBasicOAuthRefreshTokenPreferenceKey		@"gowalla_basic_oauth_refresh_token"
+	#define kGowallaBasicOAuthTokenExpirationPreferenceKey	@"gowalla_basic_oauth_token_expiration_date"
 
 IMPORTANT : open the "Supporting Files" folder and double click the facebookDemo1-info.plist.
 You will need to update the FB URL with your appID
