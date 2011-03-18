@@ -29,7 +29,8 @@
 			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb&lt;add your appId&gt;</string>
+				<string>wessocialdev</string>
+				<string>fb149013028496185</string>
 			</array>
 		</dict>
 	</array>

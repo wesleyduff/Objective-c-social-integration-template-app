@@ -19,8 +19,23 @@
 /**
  * GOWALLA API KEYS AND SECRETS
  */
-#define GowallaAPIKey @"<add your api key>"
-#define GowallaSecretKey @"<add your secret key>"
-#define GowallaApplicationWebsite @"<add your application website>"
-#define GowallaApplicationSupportWebsite @"<add your support website>"
-#define GowallaOAuthCallbackURL @"<add your oathcallback url>"
+#define kGowallaAPIBaseURL		@"https://api.gowalla.com/"
+#define kGowallaOAuthURL		@"https://gowalla.com/api/oauth/new"
+
+// Credentials for authentication using OAuth
+// Replace with your own credentials, available at http://api.gowalla.com/api/keys
+
+#define kGowallaAPIKey			@"de5c34980c0e468bb237341c9eab3fd1"
+#define kGowallaAPISecret		@"de73d3b5261944299b71e9c1641c3183"
+
+// In order to intercept and respond to the OAuth callback, we need to register
+// a custom URL type for the application. This should be unique, to avoid any
+// naming collisions with other applications.
+//
+// Replace this in Info.plist with the callback for your application,
+#define kGowallaRedirectURI		@"wessocialdev://"
+
+// Keys for storing OAuth tokens using NSUserDefaults
+#define kGowallaBasicOAuthAccessTokenPreferenceKey		@"gowalla_basic_oauth_access_token"
+#define kGowallaBasicOAuthRefreshTokenPreferenceKey		@"gowalla_basic_oauth_refresh_token"
+#define kGowallaBasicOAuthTokenExpirationPreferenceKey	@"gowalla_basic_oauth_token_expiration_date"

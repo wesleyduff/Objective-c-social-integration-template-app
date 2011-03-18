@@ -11,15 +11,18 @@
 
 @implementation facebookDemo1ViewController
 @synthesize getUserInfoButton;
-@synthesize dialogPopUpExampleButton;
+@synthesize displayDialogBoxButton;
 @synthesize facebook;
 @synthesize appDelegate;
+@synthesize  authenticationViewController;
 - (void)dealloc
 {
     [getUserInfoButton release];
-    [dialogPopUpExampleButton release];
+    [displayDialogBoxButton release];
     [appDelegate release];
     [facebook release];
+    [logIntoGowallaButton release];
+    [authenticationViewController release];
     [super dealloc];
 }
 
@@ -38,6 +41,7 @@
 - (void)viewDidLoad
 {
     self.appDelegate = (facebookDemo1AppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.authenticationViewController = self.appDelegate.authenticationViewController;
     [super viewDidLoad];
 }
 
@@ -45,7 +49,9 @@
 - (void)viewDidUnload
 {
     [self setGetUserInfoButton:nil];
-    [self setDialogPopUpExampleButton:nil];
+    [self setDisplayDialogBoxButton:nil];
+    [logIntoGowallaButton release];
+    logIntoGowallaButton = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -61,7 +67,7 @@
     [appDelegate.facebook requestWithGraphPath:@"me" andDelegate:self];
 }
 
-- (IBAction)dialogPopUpExample:(id)sender {
+- (IBAction)DisplayDialogBox:(id)sender {
     SBJSON *jsonWriter = [[SBJSON new] autorelease];
     //location of image
     
@@ -128,4 +134,13 @@
      NSLog(@"error no good");
 }
 
+- (IBAction)LogIntoGowalla:(id)sender {
+    NSString * OAuthToken = [[NSUserDefaults standardUserDefaults] objectForKey:kGowallaBasicOAuthAccessTokenPreferenceKey];
+	NSDate * OAuthTokenExpirationDate = [[NSUserDefaults standardUserDefaults] objectForKey:kGowallaBasicOAuthTokenExpirationPreferenceKey];
+	if (OAuthToken == nil || [OAuthTokenExpirationDate compare:[NSDate date]] == NSOrderedAscending) {
+		
+		[self.navigationController presentModalViewController:self.appDelegate.authenticationViewController animated:YES];	
+	}
+
+}
 @end

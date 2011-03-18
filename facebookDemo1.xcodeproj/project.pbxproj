@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5505388113330B8E009BF89E /* AuthenticationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5505387E13330B8E009BF89E /* AuthenticationView.xib */; };
+		5505388213330B8E009BF89E /* AuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5505388013330B8E009BF89E /* AuthenticationViewController.m */; };
+		55BC19D11333A9F3007AD384 /* Libraries in Resources */ = {isa = PBXBuildFile; fileRef = 55BC19D01333A9F3007AD384 /* Libraries */; };
+		55BC19D41333AA15007AD384 /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BC19D31333AA15007AD384 /* URLParser.m */; };
+		55BC19D71333AA20007AD384 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BC19D61333AA20007AD384 /* CDataScanner.m */; };
+		55BC19E01333AA2E007AD384 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BC19D91333AA2E007AD384 /* CDataScanner_Extensions.m */; };
+		55BC19E11333AA2E007AD384 /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BC19DB1333AA2E007AD384 /* NSCharacterSet_Extensions.m */; };
+		55BC19E21333AA2E007AD384 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BC19DD1333AA2E007AD384 /* NSDictionary_JSONExtensions.m */; };
+		55BC19E31333AA2E007AD384 /* NSScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BC19DF1333AA2E007AD384 /* NSScanner_Extensions.m */; };
+		55BC19EE1333AA49007AD384 /* CJSONDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BC19E51333AA49007AD384 /* CJSONDataSerializer.m */; };
+		55BC19EF1333AA49007AD384 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BC19E71333AA49007AD384 /* CJSONDeserializer.m */; };
+		55BC19F01333AA49007AD384 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BC19E91333AA49007AD384 /* CJSONScanner.m */; };
+		55BC19F11333AA49007AD384 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BC19EB1333AA49007AD384 /* CJSONSerializer.m */; };
+		55BC19F21333AA49007AD384 /* CSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BC19ED1333AA49007AD384 /* CSerializedJSONData.m */; };
+		55BC19F71333AA54007AD384 /* EGOHTTPFormRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BC19F41333AA54007AD384 /* EGOHTTPFormRequest.m */; };
+		55BC19F81333AA54007AD384 /* EGOHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BC19F61333AA54007AD384 /* EGOHTTPRequest.m */; };
 		55CAF19F1331BDD00063F192 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CAF19E1331BDD00063F192 /* UIKit.framework */; };
 		55CAF1A11331BDD00063F192 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CAF1A01331BDD00063F192 /* Foundation.framework */; };
 		55CAF1A31331BDD00063F192 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CAF1A21331BDD00063F192 /* CoreGraphics.framework */; };
@@ -40,7 +56,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5505387E13330B8E009BF89E /* AuthenticationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthenticationView.xib; sourceTree = "<group>"; };
+		5505387F13330B8E009BF89E /* AuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationViewController.h; sourceTree = "<group>"; };
+		5505388013330B8E009BF89E /* AuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationViewController.m; sourceTree = "<group>"; };
 		55A3E356133270030001151E /* keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keys.h; sourceTree = "<group>"; };
+		55BC19D01333A9F3007AD384 /* Libraries */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Libraries; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries"; sourceTree = "<group>"; };
+		55BC19D21333AA15007AD384 /* URLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URLParser.h; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/URLParser.h"; sourceTree = "<group>"; };
+		55BC19D31333AA15007AD384 /* URLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = URLParser.m; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/URLParser.m"; sourceTree = "<group>"; };
+		55BC19D51333AA20007AD384 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDataScanner.h; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/CDataScanner.h"; sourceTree = "<group>"; };
+		55BC19D61333AA20007AD384 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDataScanner.m; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/CDataScanner.m"; sourceTree = "<group>"; };
+		55BC19D81333AA2E007AD384 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDataScanner_Extensions.h; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/Extensions/CDataScanner_Extensions.h"; sourceTree = "<group>"; };
+		55BC19D91333AA2E007AD384 /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDataScanner_Extensions.m; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/Extensions/CDataScanner_Extensions.m"; sourceTree = "<group>"; };
+		55BC19DA1333AA2E007AD384 /* NSCharacterSet_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSCharacterSet_Extensions.h; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/Extensions/NSCharacterSet_Extensions.h"; sourceTree = "<group>"; };
+		55BC19DB1333AA2E007AD384 /* NSCharacterSet_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSCharacterSet_Extensions.m; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/Extensions/NSCharacterSet_Extensions.m"; sourceTree = "<group>"; };
+		55BC19DC1333AA2E007AD384 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDictionary_JSONExtensions.h; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/Extensions/NSDictionary_JSONExtensions.h"; sourceTree = "<group>"; };
+		55BC19DD1333AA2E007AD384 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDictionary_JSONExtensions.m; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/Extensions/NSDictionary_JSONExtensions.m"; sourceTree = "<group>"; };
+		55BC19DE1333AA2E007AD384 /* NSScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSScanner_Extensions.h; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/Extensions/NSScanner_Extensions.h"; sourceTree = "<group>"; };
+		55BC19DF1333AA2E007AD384 /* NSScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSScanner_Extensions.m; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/Extensions/NSScanner_Extensions.m"; sourceTree = "<group>"; };
+		55BC19E41333AA49007AD384 /* CJSONDataSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CJSONDataSerializer.h; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/JSON/CJSONDataSerializer.h"; sourceTree = "<group>"; };
+		55BC19E51333AA49007AD384 /* CJSONDataSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CJSONDataSerializer.m; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/JSON/CJSONDataSerializer.m"; sourceTree = "<group>"; };
+		55BC19E61333AA49007AD384 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CJSONDeserializer.h; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/JSON/CJSONDeserializer.h"; sourceTree = "<group>"; };
+		55BC19E71333AA49007AD384 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CJSONDeserializer.m; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/JSON/CJSONDeserializer.m"; sourceTree = "<group>"; };
+		55BC19E81333AA49007AD384 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CJSONScanner.h; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/JSON/CJSONScanner.h"; sourceTree = "<group>"; };
+		55BC19E91333AA49007AD384 /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CJSONScanner.m; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/JSON/CJSONScanner.m"; sourceTree = "<group>"; };
+		55BC19EA1333AA49007AD384 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CJSONSerializer.h; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/JSON/CJSONSerializer.h"; sourceTree = "<group>"; };
+		55BC19EB1333AA49007AD384 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CJSONSerializer.m; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/JSON/CJSONSerializer.m"; sourceTree = "<group>"; };
+		55BC19EC1333AA49007AD384 /* CSerializedJSONData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSerializedJSONData.h; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/JSON/CSerializedJSONData.h"; sourceTree = "<group>"; };
+		55BC19ED1333AA49007AD384 /* CSerializedJSONData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSerializedJSONData.m; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/TouchJSON/JSON/CSerializedJSONData.m"; sourceTree = "<group>"; };
+		55BC19F31333AA54007AD384 /* EGOHTTPFormRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EGOHTTPFormRequest.h; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/EGOHTTPRequest/EGOHTTPFormRequest.h"; sourceTree = "<group>"; };
+		55BC19F41333AA54007AD384 /* EGOHTTPFormRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EGOHTTPFormRequest.m; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/EGOHTTPRequest/EGOHTTPFormRequest.m"; sourceTree = "<group>"; };
+		55BC19F51333AA54007AD384 /* EGOHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EGOHTTPRequest.h; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/EGOHTTPRequest/EGOHTTPRequest.h"; sourceTree = "<group>"; };
+		55BC19F61333AA54007AD384 /* EGOHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EGOHTTPRequest.m; path = "../../../../../Downloads/gowalla-iPhone-Example-Client-dde87db/Libraries/EGOHTTPRequest/EGOHTTPRequest.m"; sourceTree = "<group>"; };
 		55CAF19A1331BDD00063F192 /* facebookDemo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = facebookDemo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CAF19E1331BDD00063F192 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		55CAF1A01331BDD00063F192 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -126,6 +172,10 @@
 		55CAF1A41331BDD00063F192 /* facebookDemo1 */ = {
 			isa = PBXGroup;
 			children = (
+				55BC19D01333A9F3007AD384 /* Libraries */,
+				5505387E13330B8E009BF89E /* AuthenticationView.xib */,
+				5505387F13330B8E009BF89E /* AuthenticationViewController.h */,
+				5505388013330B8E009BF89E /* AuthenticationViewController.m */,
 				55CAF1AD1331BDD00063F192 /* facebookDemo1AppDelegate.h */,
 				55CAF1AE1331BDD00063F192 /* facebookDemo1AppDelegate.m */,
 				55CAF1B01331BDD00063F192 /* MainWindow.xib */,
@@ -141,6 +191,32 @@
 		55CAF1A51331BDD00063F192 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				55BC19D21333AA15007AD384 /* URLParser.h */,
+				55BC19D31333AA15007AD384 /* URLParser.m */,
+				55BC19E41333AA49007AD384 /* CJSONDataSerializer.h */,
+				55BC19E51333AA49007AD384 /* CJSONDataSerializer.m */,
+				55BC19E61333AA49007AD384 /* CJSONDeserializer.h */,
+				55BC19E71333AA49007AD384 /* CJSONDeserializer.m */,
+				55BC19E81333AA49007AD384 /* CJSONScanner.h */,
+				55BC19E91333AA49007AD384 /* CJSONScanner.m */,
+				55BC19EA1333AA49007AD384 /* CJSONSerializer.h */,
+				55BC19EB1333AA49007AD384 /* CJSONSerializer.m */,
+				55BC19EC1333AA49007AD384 /* CSerializedJSONData.h */,
+				55BC19F31333AA54007AD384 /* EGOHTTPFormRequest.h */,
+				55BC19F41333AA54007AD384 /* EGOHTTPFormRequest.m */,
+				55BC19F51333AA54007AD384 /* EGOHTTPRequest.h */,
+				55BC19F61333AA54007AD384 /* EGOHTTPRequest.m */,
+				55BC19ED1333AA49007AD384 /* CSerializedJSONData.m */,
+				55BC19D51333AA20007AD384 /* CDataScanner.h */,
+				55BC19D61333AA20007AD384 /* CDataScanner.m */,
+				55BC19D81333AA2E007AD384 /* CDataScanner_Extensions.h */,
+				55BC19D91333AA2E007AD384 /* CDataScanner_Extensions.m */,
+				55BC19DA1333AA2E007AD384 /* NSCharacterSet_Extensions.h */,
+				55BC19DB1333AA2E007AD384 /* NSCharacterSet_Extensions.m */,
+				55BC19DC1333AA2E007AD384 /* NSDictionary_JSONExtensions.h */,
+				55BC19DD1333AA2E007AD384 /* NSDictionary_JSONExtensions.m */,
+				55BC19DE1333AA2E007AD384 /* NSScanner_Extensions.h */,
+				55BC19DF1333AA2E007AD384 /* NSScanner_Extensions.m */,
 				55CAF1FD1331C39C0063F192 /* JSON.h */,
 				55CAF1FE1331C39C0063F192 /* NSObject+SBJSON.h */,
 				55CAF1FF1331C39C0063F192 /* NSObject+SBJSON.m */,
@@ -249,6 +325,8 @@
 				55CAF1B21331BDD00063F192 /* MainWindow.xib in Resources */,
 				55CAF1B81331BDD00063F192 /* facebookDemo1ViewController.xib in Resources */,
 				55CAF1DC1331C30E0063F192 /* FBDialog.bundle in Resources */,
+				5505388113330B8E009BF89E /* AuthenticationView.xib in Resources */,
+				55BC19D11333A9F3007AD384 /* Libraries in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +350,20 @@
 				55CAF20D1331C39E0063F192 /* SBJsonBase.m in Sources */,
 				55CAF20E1331C39E0063F192 /* SBJsonParser.m in Sources */,
 				55CAF20F1331C39E0063F192 /* SBJsonWriter.m in Sources */,
+				5505388213330B8E009BF89E /* AuthenticationViewController.m in Sources */,
+				55BC19D41333AA15007AD384 /* URLParser.m in Sources */,
+				55BC19D71333AA20007AD384 /* CDataScanner.m in Sources */,
+				55BC19E01333AA2E007AD384 /* CDataScanner_Extensions.m in Sources */,
+				55BC19E11333AA2E007AD384 /* NSCharacterSet_Extensions.m in Sources */,
+				55BC19E21333AA2E007AD384 /* NSDictionary_JSONExtensions.m in Sources */,
+				55BC19E31333AA2E007AD384 /* NSScanner_Extensions.m in Sources */,
+				55BC19EE1333AA49007AD384 /* CJSONDataSerializer.m in Sources */,
+				55BC19EF1333AA49007AD384 /* CJSONDeserializer.m in Sources */,
+				55BC19F01333AA49007AD384 /* CJSONScanner.m in Sources */,
+				55BC19F11333AA49007AD384 /* CJSONSerializer.m in Sources */,
+				55BC19F21333AA49007AD384 /* CSerializedJSONData.m in Sources */,
+				55BC19F71333AA54007AD384 /* EGOHTTPFormRequest.m in Sources */,
+				55BC19F81333AA54007AD384 /* EGOHTTPRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +434,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "facebookDemo1/facebookDemo1-Prefix.pch";
@@ -356,6 +452,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "facebookDemo1/facebookDemo1-Prefix.pch";
 				INFOPLIST_FILE = "facebookDemo1/facebookDemo1-Info.plist";

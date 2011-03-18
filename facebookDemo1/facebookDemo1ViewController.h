@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Facebook.h"
 #import "facebookDemo1AppDelegate.h"
+#import "AuthenticationViewController.h"
 
 /**
  DIALOG info
@@ -23,15 +24,20 @@
 @interface facebookDemo1ViewController : UIViewController <FBRequestDelegate, FBDialogDelegate>{
     
     UIButton *getUserInfoButton;
-    UIButton *dialogPopUpExampleButton;
+    UIButton *displayDialogBoxButton;
     facebookDemo1AppDelegate *appDelegate;
     Facebook *facebook;
+    IBOutlet UIButton *logIntoGowallaButton;
+    AuthenticationViewController *authenticationViewController;
+    
 }
 - (IBAction)getUserInfo:(id)sender;
-- (IBAction)dialogPopUpExample:(id)sender;
+- (IBAction)DisplayDialogBox:(id)sender;
+- (IBAction)LogIntoGowalla:(id)sender;
 @property (nonatomic, retain) IBOutlet UIButton *getUserInfoButton;
-@property (nonatomic, retain) IBOutlet UIButton *dialogPopUpExampleButton;
+@property (nonatomic, retain) IBOutlet UIButton *displayDialogBoxButton;
 @property (nonatomic, retain) facebookDemo1AppDelegate *appDelegate;
+@property (nonatomic, retain) AuthenticationViewController *authenticationViewController;
 @property (nonatomic, retain) Facebook *facebook;
 
 
