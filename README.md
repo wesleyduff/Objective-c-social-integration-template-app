@@ -70,9 +70,11 @@ Save and build.
 
 After you sign into facebook and accept the permissions then you should be directed back to the application.
 
-Right now the application only has two buttons. The first one grabs the user info and displays it in the Log aka the NSLog(); function
+Right now the application has three buttons. The first one grabs the user info and displays it in the Log aka the NSLog(); function
 
-The section button when selected opens a dialog to post a message on your facebook page.
+The second button when selected opens a dialog to post a message on your facebook page.
+
+The third button opens a UIWebView that shows the login procedure for gowalla. Once signed in you can allow the application to function or deny. Once you choose the UIWebView goes away and the buttons are displayed once again.
 
 Updates will be made almost every day so check back and pick it up when finished unless you want to play around with the code your self.
 
