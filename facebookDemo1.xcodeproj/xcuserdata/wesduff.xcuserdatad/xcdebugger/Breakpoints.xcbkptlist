@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "facebookDemo1/facebookDemo1ViewController.m"
-         timestampString = "322116288.177256"
+         timestampString = "322426137.49522"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "110"
-         endingLineNumber = "110"
+         startingLineNumber = "124"
+         endingLineNumber = "124"
          landmarkName = "-dialogDidComplete:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -23,11 +23,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "facebookDemo1/facebookDemo1ViewController.m"
-         timestampString = "322116288.177256"
+         timestampString = "322426137.49522"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "114"
-         endingLineNumber = "114"
+         startingLineNumber = "128"
+         endingLineNumber = "128"
          landmarkName = "-dialog:didFailWithError:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -37,11 +37,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "facebookDemo1/facebookDemo1ViewController.m"
-         timestampString = "322116288.177256"
+         timestampString = "322426137.49522"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "124"
-         endingLineNumber = "124"
+         startingLineNumber = "138"
+         endingLineNumber = "138"
          landmarkName = "-dialogDidNotCompleteWithUrl:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -51,11 +51,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "facebookDemo1/facebookDemo1ViewController.m"
-         timestampString = "322116288.177256"
+         timestampString = "322426137.49522"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "119"
-         endingLineNumber = "119"
+         startingLineNumber = "133"
+         endingLineNumber = "133"
          landmarkName = "-dialogCompleteWithUrl:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -65,11 +65,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "facebookDemo1/facebookDemo1ViewController.m"
-         timestampString = "322116288.177256"
+         timestampString = "322426137.49522"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "130"
-         endingLineNumber = "130"
+         startingLineNumber = "144"
+         endingLineNumber = "144"
          landmarkName = "-request:didLoad:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,6 +99,20 @@
          startingLineNumber = "114"
          endingLineNumber = "114"
          landmarkName = "-applicationDidAuthorizeWithRequest:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "facebookDemo1/facebookDemo1ViewController.m"
+         timestampString = "322426107.932049"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "230"
+         endingLineNumber = "230"
+         landmarkName = "-requestTokenTicket:didFailWithError:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
