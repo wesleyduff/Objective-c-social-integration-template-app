@@ -16,6 +16,7 @@
     UIWindow * window;
     UINavigationController *navigationController;
     AuthenticationViewController *authenticationViewController;
+    
 }
 @property (nonatomic,retain) Facebook *facebook;
 @property (nonatomic, retain) IBOutlet UIWindow *window;

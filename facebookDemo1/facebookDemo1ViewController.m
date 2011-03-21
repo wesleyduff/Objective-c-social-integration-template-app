@@ -7,6 +7,8 @@
 //
 
 #import "facebookDemo1ViewController.h"
+#import "URLParser.h"
+#import "EGOHTTPFormRequest.h"
 #import "keys.h"
 
 @implementation facebookDemo1ViewController
@@ -15,6 +17,8 @@
 @synthesize facebook;
 @synthesize appDelegate;
 @synthesize  authenticationViewController;
+@synthesize consumer;
+@synthesize accessToken;
 - (void)dealloc
 {
     [getUserInfoButton release];
@@ -23,6 +27,7 @@
     [facebook release];
     [logIntoGowallaButton release];
     [authenticationViewController release];
+    [logIntoTwitterButton release];
     [super dealloc];
 }
 
@@ -42,6 +47,12 @@
 {
     self.appDelegate = (facebookDemo1AppDelegate *)[[UIApplication sharedApplication] delegate];
     self.authenticationViewController = self.appDelegate.authenticationViewController;
+    
+    if(self.consumer == nil){
+        self.consumer = [[OAConsumer alloc] initWithKey:twitterConsumerkey secret:twitterConsumerSecret];
+    }
+    self.accessToken = [[OAToken alloc] initWithUserDefaultsUsingServiceProviderName:twitterAppProviderName prefix:twitterAppPrefix];
+    
     [super viewDidLoad];
 }
 
@@ -52,6 +63,8 @@
     [self setDisplayDialogBoxButton:nil];
     [logIntoGowallaButton release];
     logIntoGowallaButton = nil;
+    [logIntoTwitterButton release];
+    logIntoTwitterButton = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -62,6 +75,7 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
 
 - (IBAction)getUserInfo:(id)sender {
     [appDelegate.facebook requestWithGraphPath:@"me" andDelegate:self];
@@ -143,4 +157,195 @@
 	}
 
 }
+
+#pragma -
+#pragma Twitter Authentication Method Steps
+- (IBAction)LogIntoTwitter:(id)sender {
+    NSLog(@"authenticate Twitter");
+    OAMutableURLRequest *request;
+    OADataFetcher *fetcher;
+    
+    NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/oauth/request_token"];
+    request = [[[OAMutableURLRequest alloc] initWithURL:url consumer:self.consumer token:self.accessToken realm:nil signatureProvider:nil] autorelease];
+    [request setHTTPMethod:@"POST"];
+    
+    OARequestParameter *p0 = [[OARequestParameter alloc] initWithName:@"oauth_callback" value:@"oob"];
+    NSArray *params = [NSArray arrayWithObject:p0];
+    [request setParameters:params];
+    
+    fetcher = [[[OADataFetcher alloc] init] autorelease];
+    
+    [fetcher fetchDataWithRequest:request delegate:self didFinishSelector:@selector(requestTokenTicket:didFinishWithData:) didFailSelector:@selector(requestTokenTicket:didFailWithError:)];
+    [p0 release];
+    
+}
+
+- (void)requestTokenTicket:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data {
+    
+    if (ticket.didSucceed) {
+        OAMutableURLRequest *request;
+        NSString *responseBody = [[NSString alloc] initWithData:data
+                                                       encoding:NSUTF8StringEncoding];
+        
+        if (self.accessToken != nil) {
+            [self.accessToken release];
+            self.accessToken = nil;
+        }
+        
+        self.accessToken = [[OAToken alloc] initWithHTTPResponseBody:responseBody];
+        [responseBody release];
+        
+        NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/oauth/authorize"];
+        
+        request = [[[OAMutableURLRequest alloc] initWithURL:url
+                                                   consumer:self.consumer
+                                                      token:self.accessToken
+                                                      realm:nil
+                                          signatureProvider:nil] autorelease];
+        
+        
+        OARequestParameter *p0 = [[OARequestParameter alloc] initWithName:@"oauth_token"
+                                                                    value:self.accessToken.key];
+        NSArray *params = [NSArray arrayWithObject:p0];
+        [request setParameters:params];
+        //[request prepare];
+        
+        AuthenticationTwitterViewController *vc;
+        vc = [[AuthenticationTwitterViewController alloc] initWithNibName:@"AuthenticationTwitterViewController" bundle:nil];
+        vc.delegate = self;
+        [self presentModalViewController:vc animated:YES];
+        [vc.webView loadRequest:request];
+        
+        [vc release];
+        [p0 release];
+    }
+    else {
+        
+    }
+    
+    
+}
+
+- (void)requestTokenTicket:(OAServiceTicket *)ticket didFailWithError:(NSError *)error {
+    NSLog(@"%@", error);
+}
+
+-(IBAction)TwitterAction:(id)sender {
+    NSLog(@"in loggin to twitter");
+   /* if(self.accessToken != nil){
+        OAMutableURLRequest *request;
+        OADataFetcher *fetcher;
+        NSURL *url = [NSURL URLWithString:@"http://api.twitter.com/1/statuses/update.json"];
+        request = [[[OAMutableURLRequest alloc] initWithURL:url consumer:self.consumer token:self.accessToken realm:nil signatureProvider:nil] autorelease];
+        [request setHTTPMethod:@"POST"];
+        
+       OARequestParameter *x1 = [[OARequestParameter alloc] initWithName:@"status" value:self.message.text];
+        
+        NSArray *params = [NSArray arrayWithObjects:x1, nil];
+        [request setParameters:params];
+        
+        
+        fetcher = [[[OADataFetcher alloc] init] autorelease];
+        [fetcher fetchDataWithRequest:request
+                             delegate:self
+                    didFinishSelector:@selector(statusRequestTokenTicket:didFinishWithData:)
+                      didFailSelector:@selector(statusRequestTokenTicket:didFailWithError:)];
+        
+        [x1 release];
+    }*/
+    
+}
+
+#pragma mark -
+#pragma mark AuthenticationTwitterViewControllerDelegate methods
+
+- (void)successfulAuthorizationWithPin:(NSString *)pin {
+    NSLog(@"successfulAuthorizationWithPin:%@", pin);
+    OAMutableURLRequest *request;
+    OADataFetcher *fetcher;
+    
+    NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/oauth/access_token"];
+    
+    request = [[[OAMutableURLRequest alloc] initWithURL:url
+                                               consumer:self.consumer
+                                                  token:self.accessToken
+                                                  realm:nil
+                                      signatureProvider:nil] autorelease];
+    
+    
+    OARequestParameter *p0 = [[OARequestParameter alloc] initWithName:@"oauth_token"
+                                                                value:self.accessToken.key];
+    OARequestParameter *p1 = [[OARequestParameter alloc] initWithName:@"oauth_verifier"
+                                                                value:pin];
+    NSArray *params = [NSArray arrayWithObjects:p0, p1, nil];
+    [request setParameters:params];
+    
+    fetcher = [[[OADataFetcher alloc] init] autorelease];
+    
+    [fetcher fetchDataWithRequest:request
+                         delegate:self
+                didFinishSelector:@selector(accessTokenTicket:didFinishWithData:)
+                  didFailSelector:@selector(accessTokenTicket:didFailWithError:)];
+    
+    [p0 release];
+    [p1 release];
+    
+    
+    
+    
+}
+
+- (void)failedAuthorization {
+    NSLog(@"failedAuthorization");
+}
+
+
+
+- (void)accessTokenTicket:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data {
+    if (ticket.didSucceed) {
+        NSLog(@"accessTokenSuccess");
+        
+        NSString *responseBody = [[NSString alloc] initWithData:data
+                                                       encoding:NSUTF8StringEncoding];
+        
+        if (self.accessToken != nil) {
+            [self.accessToken release];
+            self.accessToken = nil;
+        }
+        
+        self.accessToken = [[OAToken alloc] initWithHTTPResponseBody:responseBody];
+        [responseBody release];
+        
+        [self.accessToken storeInUserDefaultsWithServiceProviderName:twitterAppProviderName
+                                                              prefix:twitterAppPrefix];
+        
+        
+    }
+}
+
+- (void)accessTokenTicket:(OAServiceTicket *)ticket didFailWithError:(NSError *)error {
+    NSLog(@"%@", error);
+}
+
+
+- (void)statusRequestTokenTicket:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data {
+    if (ticket.didSucceed) {
+        NSString *responseBody = [[NSString alloc] initWithData:data
+                                                       encoding:NSUTF8StringEncoding];
+        NSLog(@"%@", responseBody);
+        [responseBody release];
+    }    
+    
+    
+}
+
+
+
+- (void)statusRequestTokenTicket:(OAServiceTicket *)ticket didFailWithError:(NSError *)error {
+    NSLog(@"%@", error);
+    
+}
+
+
+
 @end

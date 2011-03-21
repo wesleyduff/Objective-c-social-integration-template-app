@@ -17,6 +17,21 @@
 #define FacebookSupportEmail @"<add your support email>"
 
 /**
+ * Twitter API KEYS AND SECRETS
+ */
+#define twitterConsumerkey @"KvtyfXXknfQioxnuq8nWg"
+#define twitterConsumerSecret @"rMVX4emJI3cnVABH69HwJ1aR6WtdvzMhBNtx4WePzVE"
+#define twitterRequestTokenURL @"http://twitter.com/oauth/request_token"
+#define twitterAccessTokenURL @"http://twitter.com/oauth/access_token"
+#define twitterAuthorizeURL @"http://twitter.com/oauth/authorize"
+#define twitterAppProviderName @"wesduff.com"
+#define twitterAppPrefix @"socialnetwork-integration"
+/*
+ We support hmac-sha1 signatures. We do not support the plaintext signature method. 
+ */
+
+
+/**
  * GOWALLA API KEYS AND SECRETS
  */
 #define kGowallaAPIBaseURL		@"https://api.gowalla.com/"
