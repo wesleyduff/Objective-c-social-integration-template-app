@@ -3,10 +3,9 @@
 
 More to come at a later date
 
-As of 3-18-2011 After changing the file "keys.h" with the appropriate api keys, app keys, etc.. you will be able to leverage facebook and gowalla's api.
-NOTE: Twitter api integration should be completed and available for use on 3-21-2011. Thanks
+As of 3-21-2011 After changing the file "keys.h" with the appropriate api keys, app keys, etc.. you will be able to leverage facebook, twitter and gowalla's api.
 
-As of 3-17-2011 The mobile plateform iOS is the only mobile platform supported
+As of 3-21-2011 The mobile platform iOS is the only mobile platform supported
 
 Platforms currently being added
 
@@ -22,14 +21,38 @@ Download files
 
 Open key.h and edit these lines
 
+	//
+	//  keys.h
+	//  facebookDemo1
+	//
+	//  Created by Wes Duff on 3/17/11.
+	//  Copyright 2011 __MyCompanyName__. All rights reserved.
+	//
+
+
 	/**
 	 * FACEBOOK API KEYS AND SECRETS
 	*/
-	#define FacebookAppID @"<add your app id>"
-	#define FacebookAPIKey @"<add your api key>"
-	#define FacebookAppSecret @"<add your app secret>"
-	#define FacebookContactEmail @"<add your contact email>"
-	#define FacebookSupportEmail @"<add your support email>"
+	#define FacebookAppID @"<add yours>"
+	#define FacebookAPIKey @"<add yours>"
+	#define FacebookAppSecret @"<add yours>"
+	#define FacebookContactEmail @"<add yours>"
+	#define FacebookSupportEmail @"<add yours>"
+
+	/**
+	 * Twitter API KEYS AND SECRETS
+	 */
+	#define twitterConsumerkey @"<add yours>"
+	#define twitterConsumerSecret @"<add yours>"
+	#define twitterRequestTokenURL @"http://twitter.com/oauth/request_token"
+	#define twitterAccessTokenURL @"http://twitter.com/oauth/access_token"
+	#define twitterAuthorizeURL @"http://twitter.com/oauth/authorize"
+	#define twitterAppProviderName @"<add yours>"
+	#define twitterAppPrefix @"<add yours>"
+	/*
+	 We support hmac-sha1 signatures. We do not support the plaintext signature method. 
+	 */
+
 
 	/**
 	 * GOWALLA API KEYS AND SECRETS
@@ -40,15 +63,15 @@ Open key.h and edit these lines
 	// Credentials for authentication using OAuth
 	// Replace with your own credentials, available at http://api.gowalla.com/api/keys
 
-	#define kGowallaAPIKey			@"<add your app id>"
-	#define kGowallaAPISecret		@"<add your app secret>"
+	#define kGowallaAPIKey			@"<add yours>"
+	#define kGowallaAPISecret		@"<add yours>"
 
 	// In order to intercept and respond to the OAuth callback, we need to register
 	// a custom URL type for the application. This should be unique, to avoid any
 	// naming collisions with other applications.
 	//
 	// Replace this in Info.plist with the callback for your application,
-	#define kGowallaRedirectURI		@"<your callback url : should be something like whatever://> "
+	#define kGowallaRedirectURI		@"<add yours>"
 
 	// Keys for storing OAuth tokens using NSUserDefaults
 	#define kGowallaBasicOAuthAccessTokenPreferenceKey		@"gowalla_basic_oauth_access_token"
@@ -64,17 +87,20 @@ You will need to update the FB URL with your appID
 	*	item 0
 		*	URL Schemes
 			*	item 0	string fb\<add your appId\>
+				etc..
 NOTE: do not add the "<" or ">" that is just the place where you add your appId.
 
 Save and build. 
 
 After you sign into facebook and accept the permissions then you should be directed back to the application.
 
-Right now the application has three buttons. The first one grabs the user info and displays it in the Log aka the NSLog(); function
+Right now the application has four buttons. The first one grabs the user info and displays it in the Log aka the NSLog(); function
 
 The second button when selected opens a dialog to post a message on your facebook page.
 
 The third button opens a UIWebView that shows the login procedure for gowalla. Once signed in you can allow the application to function or deny. Once you choose the UIWebView goes away and the buttons are displayed once again.
+
+The fourth button has the functionality to log you into your twitter account. It contains a UIWebView as well to manage the "Allow this application" functionality to take place.
 
 Updates will be made almost every day so check back and pick it up when finished unless you want to play around with the code your self.
 
