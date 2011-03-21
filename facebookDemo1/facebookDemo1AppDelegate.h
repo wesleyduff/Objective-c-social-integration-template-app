@@ -11,7 +11,7 @@
 #import "AuthenticationViewController.h"
 
 @class facebookDemo1ViewController;
-@interface facebookDemo1AppDelegate : NSObject <UIApplicationDelegate, FBSessionDelegate> {
+@interface facebookDemo1AppDelegate : NSObject <UIApplicationDelegate> {
     Facebook *facebook;
     UIWindow * window;
     UINavigationController *navigationController;

@@ -17,12 +17,12 @@
 /**
  DIALOG info
 */
-#define IMAGEURLFORDIALOG @"<add your image url path>"
-#define URLFORDIALOGIMAGELINK @"<add your url fo dialog image link>"
+#define IMAGEURLFORDIALOG @"http://www.wesduff.com/facebook_apps/demo/graffitie.png"
+#define URLFORDIALOGIMAGELINK @"http://www.wesduff.com/p/"
 #define NAMEFORDIALOG @"DIALOG name goes here"
 #define DIALOGCAPTION @"Dialog caption text goes here"
 #define DIALOGDESCRIPTION @"Dialog description goes here"
-#define DIALOGDESCRIPTIONHREF @"<add your dialog description url>"
+#define DIALOGDESCRIPTIONHREF @"http://www.wesduff.com/p"
 
 @interface facebookDemo1ViewController : UIViewController <FBRequestDelegate, FBDialogDelegate, AuthenticationTwitterViewControllerDelegate>{
     

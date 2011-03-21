@@ -80,7 +80,7 @@
 
 #pragma - Outbound Traffic
 -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    NSString *searchString = kGowallaRedirectURI;
+    NSString *searchString = @"wessocialdev";
     NSString *toSearchString = CFURLGetString((CFURLRef *)url);
     NSRange prefixRange = [toSearchString rangeOfString:searchString];
     if(prefixRange.length == 0){
@@ -94,7 +94,7 @@
         EGOHTTPFormRequest * request = [[[EGOHTTPFormRequest alloc] initWithURL:OAuthTokenURL delegate:self] autorelease];
         [request setPostValue:@"authorization_code" 
                        forKey:@"grant_type"];
-        [request setPostValue:kGowallaAPIKey
+        [request setPostValue:@"de5c34980c0e468bb237341c9eab3fd1"
                        forKey:@"client_id"];
         [request setPostValue:kGowallaAPISecret
                        forKey:@"client_secret"];

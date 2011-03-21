@@ -29,8 +29,8 @@
 			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>callback-url://</string>
-				<string>fbappid</string>
+				<string>wessocialdev</string>
+				<string>fb149013028496185</string>
 			</array>
 		</dict>
 	</array>
