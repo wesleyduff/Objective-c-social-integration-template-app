@@ -20,7 +20,7 @@
 	[super viewDidLoad];
 	
 	NSString * OAuthURLString = [kGowallaOAuthURL stringByAppendingFormat:@"?redirect_uri=%@&client_id=%@&scope=%@", kGowallaRedirectURI, kGowallaAPIKey, @"read-write"];
-	NSURL * OAuthURL = [NSURL URLWithString:@"https://gowalla.com/api/oauth/new?redirect_uri=wessocialdev://&client_id=de5c34980c0e468bb237341c9eab3fd1"];
+	NSURL * OAuthURL = [NSURL URLWithString:OAuthURLString];
 	NSURLRequest * OAuthURLRequest = [[[NSURLRequest alloc] initWithURL:OAuthURL] autorelease];
 	
 	[webView loadRequest:OAuthURLRequest];
